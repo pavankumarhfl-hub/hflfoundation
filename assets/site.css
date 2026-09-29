@@ -176,3 +176,20 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   nav a{font-size:10px}
   .header-cta{padding:9px 11px;font-size:9px}
 }
+
+/* Mobile visibility safeguard: never hide primary content behind scroll-reveal on touch devices. */
+@media (max-width:900px){
+  html.js .reveal,
+  html.js .reveal-up,
+  html.js .reveal-line,
+  html.js .work-row,
+  html.js .eco-node,
+  html.js .metric,
+  html.js .human-panel,
+  html.js .transparency-grid>a,
+  html.js .story-index>div{
+    opacity:1!important;
+    transform:none!important;
+    clip-path:none!important;
+  }
+}
