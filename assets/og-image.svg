@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">HFL Foundation — Hope For Life</title>
+<desc id="desc">HFL Foundation, established in 2020. People. Education. Community. Action.</desc>
+<rect width="1200" height="630" fill="#000"/>
+<rect x="34" y="34" width="1132" height="562" fill="none" stroke="#242424" stroke-width="2"/>
+<text x="70" y="160" fill="#f5f3ed" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="800" letter-spacing="-8">HFL</text>
+<text x="74" y="215" fill="#c7a66a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="8">FOUNDATION</text>
+<text x="74" y="258" fill="#98968f" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" letter-spacing="5">HOPE FOR LIFE</text>
+<line x1="74" y1="350" x2="1126" y2="350" stroke="#2c2c2c" stroke-width="1"/>
+<text x="74" y="420" fill="#f5f3ed" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="500">People. Education. Community. Action.</text>
+<text x="74" y="474" fill="#98968f" font-family="Arial, Helvetica, sans-serif" font-size="22">Established in 2020 · India</text>
+<text x="74" y="550" fill="#c7a66a" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">hflfoundation.in</text>
+</svg>
