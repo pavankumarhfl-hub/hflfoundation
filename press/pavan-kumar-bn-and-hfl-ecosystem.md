@@ -4,9 +4,9 @@
 
 Pavan Kumar BN is identified by HFL Foundation as the founder of HFL Foundation — Hope For Life, an organisation established in 2020. The public HFL Foundation website describes the Foundation's work across social service, education, community support and practical action.
 
-HFL Foundation is presented as the social-impact core of a wider HFL ecosystem. The Foundation's public site describes related areas including HFL Education, HFL Community, HFL Cyber, HFL Educational Trust and HFL Tech. These identities serve different purposes and should not be treated as interchangeable organisations or products.
+HFL Foundation is presented as the social-impact core of a wider HFL ecosystem. The Foundation's public site describes related areas including HFL Education, HFL Community, HFL Cyber, HFL Educational Trust and HFL Global Tech. These identities serve different purposes and should not be treated as interchangeable organisations or products.
 
-The technology direction is represented separately by HFL Tech, while technology projects associated with the founder's development work are being built and documented independently. AgentMesh, for example, is currently maintained in a private repository and should therefore be described as a project under development rather than as an established public product or market leader.
+The technology direction is represented separately by HFL Global Tech, while technology projects associated with the founder's development work are being built and documented independently. AgentMesh, for example, is currently maintained in a private repository and should therefore be described as a project under development rather than as an established public product or market leader.
 
 This distinction is important for accurate public information. The HFL ecosystem includes established organisational identities as well as developing technology projects, and public descriptions should reflect the actual stage of each initiative.
 
@@ -14,6 +14,6 @@ Pavan Kumar BN's public developer profile also documents an engineering focus on
 
 For readers researching the HFL ecosystem, the clearest entity relationship is therefore:
 
-**Pavan Kumar BN → HFL / Hope For Life → HFL Foundation and related HFL initiatives → HFL Tech → developing technology projects such as AgentMesh.**
+**Pavan Kumar BN → HFL / Hope For Life → HFL Foundation and related HFL initiatives → HFL Global Tech → developing technology projects such as AgentMesh.**
 
 This page is intended as a factual reference and will be updated as public project documentation and organisational information change.
