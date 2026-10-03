@@ -1,4 +1,4 @@
-name: HFL Ecosystem Branding and SEO
+name: Restore HFL Tech Ecosystem Branding
 
 on:
   push:
@@ -8,60 +8,45 @@ permissions:
   contents: write
 
 jobs:
-  optimize:
+  restore:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Update HFL Global Tech identity and search metadata
+      - name: Restore HFL Tech references
         shell: bash
         run: |
           python3 <<'PY'
           from pathlib import Path
           import re
-          from datetime import date
-
-          root = Path('.')
+          root=Path('.')
+          exts={'.html','.htm','.css','.js','.json','.xml','.txt','.md','.svg','.webmanifest'}
           for p in root.rglob('*'):
-              if not p.is_file() or '.git' in p.parts or '.github' in p.parts:
-                  continue
-              if p.suffix.lower() not in {'.html','.htm','.css','.js','.json','.xml','.txt','.md','.svg','.webmanifest'}:
-                  continue
-              try:
-                  s = p.read_text(encoding='utf-8')
-              except Exception:
-                  continue
-              old = s
-              s = s.replace('HFL<span>TECH</span>', 'HFL<span>GLOBAL TECH</span>')
-              s = s.replace('HFL TECH', 'HFL GLOBAL TECH')
-              s = s.replace('HFL Tech', 'HFL Global Tech')
-              s = s.replace('HFL Global Tech Private Limited', 'HFL Global Technologies Private Limited')
-              s = s.replace('HFLTECH', 'HFLGLOBALTECH')
-              if p.as_posix() == 'index.html':
-                  s = s.replace('Software, AI, automation and emerging technologies.', 'Super intelligence, software engineering, automation and emerging technologies.')
-                  s = s.replace('HFL Global Tech, legally HFL Global Technologies Private Limited, develops super-intelligence systems, software engineering, automation and cybersecurity technology.', 'HFL Global Tech — HFL Global Technologies Private Limited — develops super-intelligence systems, software engineering, automation and cybersecurity technology within the wider HFL ecosystem.')
-                  if 'HFL Global Technologies Private Limited' not in s:
-                      s = s.replace('</head>', '<meta name="publisher" content="HFL Global Technologies Private Limited"><meta name="application-name" content="HFL Global Tech"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hfltech.in/#organization","name":"HFL Global Tech","legalName":"HFL Global Technologies Private Limited","alternateName":["HFL Global Tech","HFL Tech"],"url":"https://hfltech.in/","description":"Technology organisation within the wider HFL ecosystem, developing super-intelligence systems, software engineering, automation and cybersecurity technology."}</script></head>')
-              if p.name == 'site.webmanifest':
-                  s = s.replace('HFL Tech', 'HFL Global Tech')
-              if p.name == 'sitemap.xml':
-                  s = re.sub(r'<lastmod>[^<]+</lastmod>', f'<lastmod>{date.today().isoformat()}</lastmod>', s)
-              if s != old:
-                  p.write_text(s, encoding='utf-8')
+              if not p.is_file() or '.git' in p.parts or '.github' in p.parts or p.suffix.lower() not in exts: continue
+              try: s=p.read_text(encoding='utf-8')
+              except: continue
+              old=s
+              s=s.replace('HFL<span>GLOBAL TECH</span>','HFL<span>TECH</span>')
+              s=s.replace('HFL GLOBAL TECH','HFL TECH')
+              s=s.replace('HFL Global Technologies Private Limited','HFL Tech')
+              s=s.replace('HFL Global Tech','HFL Tech')
+              s=s.replace('HFLGLOBALTECH','HFLTECH')
+              s=s.replace('Super intelligence, software engineering, automation and emerging technologies.','Software, AI, automation and emerging technologies.')
+              s=s.replace('HFL Tech — HFL Tech — develops super-intelligence systems, software engineering, automation and cybersecurity technology within the wider HFL ecosystem.','HFL Tech develops software, AI, automation and emerging technologies within the wider HFL ecosystem.')
+              if p.name=='site.webmanifest': s=s.replace('HFL Tech — HFL Tech','HFL Tech')
+              if p.name=='index.html':
+                  s=re.sub(r'<meta name="publisher" content="HFL Tech"><meta name="application-name" content="HFL Tech"><script type="application/ld\+json">.*?</script>','',s,flags=re.S)
+                  s=re.sub(r'<meta name="publisher" content="HFL Tech"><meta name="application-name" content="HFL Tech">','',s)
+                  s=re.sub(r'<script type="application/ld\+json">\{"@context":"https://schema.org","@type":"Organization","@id":"https://hfltech.in/#organization","name":"HFL Tech".*?</script>','',s,flags=re.S)
+              if s!=old: p.write_text(s,encoding='utf-8')
           PY
-
-      - name: Commit changes
-        shell: bash
+      - name: Commit restoration
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          if git diff --cached --quiet; then
-            echo 'No branding changes required.'
-            exit 0
-          fi
-          git commit -m 'Normalize HFL Global Tech legal identity'
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Restore HFL Tech ecosystem branding'
           git push
