@@ -1,0 +1,64 @@
+name: HFL Ecosystem Branding and SEO
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update HFL Global Tech identity and search metadata
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+          from datetime import date
+
+          root = Path('.')
+          for p in root.rglob('*'):
+              if not p.is_file() or '.git' in p.parts or '.github' in p.parts:
+                  continue
+              if p.suffix.lower() not in {'.html','.htm','.css','.js','.json','.xml','.txt','.md','.svg','.webmanifest'}:
+                  continue
+              try:
+                  s = p.read_text(encoding='utf-8')
+              except Exception:
+                  continue
+              old = s
+              s = s.replace('HFL TECH', 'HFL GLOBAL TECH')
+              s = s.replace('HFL Tech', 'HFL Global Tech')
+              s = s.replace('HFLTECH', 'HFLGLOBALTECH')
+              if p.as_posix() == 'index.html':
+                  s = s.replace('<b>HFL GLOBAL TECH</b><small>', '<b>HFL GLOBAL TECH</b><small>')
+                  s = s.replace('Software, AI, automation and emerging technologies.', 'Super intelligence, software engineering, automation and emerging technologies.')
+                  s = s.replace('HFL Global Tech, legally HFL Global Technologies Private Limited, develops super-intelligence systems, software engineering, automation and cybersecurity technology.', 'HFL Global Tech — HFL Global Technologies Private Limited — develops super-intelligence systems, software engineering, automation and cybersecurity technology within the wider HFL ecosystem.')
+                  if 'HFL Global Technologies Private Limited' not in s:
+                      s = s.replace('</head>', '<meta name="publisher" content="HFL Global Technologies Private Limited"><meta name="application-name" content="HFL Global Tech"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://hfltech.in/#organization","name":"HFL Global Tech","legalName":"HFL Global Technologies Private Limited","alternateName":["HFL Global Tech","HFL Tech"],"url":"https://hfltech.in/","description":"Technology organisation within the wider HFL ecosystem, developing super-intelligence systems, software engineering, automation and cybersecurity technology."}</script></head>')
+              if p.name == 'sitemap.xml':
+                  s = re.sub(r'<lastmod>[^<]+</lastmod>', f'<lastmod>{date.today().isoformat()}</lastmod>', s)
+              if s != old:
+                  p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No branding changes required.'
+            exit 0
+          fi
+          git commit -m 'Reference HFL Global Tech consistently across the HFL ecosystem'
+          git push
