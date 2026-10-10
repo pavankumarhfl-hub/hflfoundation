@@ -455,3 +455,20 @@ body.foundation-home .final-cta h2{color:#f1f1ef}
 body.foundation-home .final-cta .btn.dark{background:#f1f1ef;color:#111214;border-color:#f1f1ef}
 body.foundation-home .final-cta .btn.darkline{color:#f1f1ef;border-color:rgba(255,255,255,.3);background:transparent}
 @media(max-width:520px){body.foundation-home .ecosystem-home{padding-top:24px;padding-bottom:24px}}
+
+
+/* Editorial explanations: substantive copy without bringing back the ecosystem diagram or founder block. */
+.foundation-explainer{padding-top:clamp(60px,8vw,105px);padding-bottom:clamp(60px,8vw,105px)}
+.foundation-explainer>.section-label{margin-bottom:28px}
+.foundation-explainer .explainer-block{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,7vw,100px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid rgba(255,255,255,.12);align-items:start}
+.foundation-explainer .explainer-block:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+.foundation-explainer .explainer-block h2{font-size:clamp(32px,4vw,56px);line-height:1.02;margin:18px 0 0}
+.foundation-explainer .explainer-block h2 i{color:#b8b8bd}
+.foundation-explainer .explainer-block p:not(.eyebrow){margin:0;color:#b9bac0;font-size:16px;line-height:1.85;max-width:680px}
+.foundation-explainer .explainer-block .eyebrow{margin:0;color:#d0b27a;font-size:10px;letter-spacing:.15em}
+.foundation-explainer .explainer-block .arrow-link{margin-top:22px}
+@media(max-width:700px){
+ .foundation-explainer .explainer-block{grid-template-columns:1fr;gap:16px;padding:30px 0}
+ .foundation-explainer .explainer-block h2{font-size:clamp(32px,9vw,46px)}
+ .foundation-explainer .explainer-block p:not(.eyebrow){font-size:14px;line-height:1.8}
+}
