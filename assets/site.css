@@ -443,3 +443,15 @@ footer{padding-inline:max(7vw,calc((100vw - 1120px)/2))}
 @media(prefers-reduced-motion:reduce){
  .reveal-up,.reveal,.reveal-line,.metric,.eco-node,.transparency-grid>a,.human-panel,.work-row{transition:none!important;transform:none!important;clip-path:none!important;opacity:1!important}
 }
+
+
+/* Homepage corrections: keep the Foundation experience consistently dark and uncluttered. */
+body.foundation-home .ecosystem-home{padding-top:30px;padding-bottom:30px;background:#111214}
+body.foundation-home .ecosystem-home>.section-label{margin-bottom:12px}
+body.foundation-home .ecosystem-explore-link{display:inline-block;margin-top:0;font-size:clamp(16px,2vw,20px);padding:0 0 10px;color:#e0c38c;border-bottom:1px solid rgba(224,195,140,.35)}
+body.foundation-home .final-cta{background:radial-gradient(ellipse at 50% 0%,rgba(208,178,122,.07),transparent 55%),#111214;color:#f1f1ef;border-top:1px solid rgba(255,255,255,.09)}
+body.foundation-home .final-cta .eyebrow{color:#d0b27a}
+body.foundation-home .final-cta h2{color:#f1f1ef}
+body.foundation-home .final-cta .btn.dark{background:#f1f1ef;color:#111214;border-color:#f1f1ef}
+body.foundation-home .final-cta .btn.darkline{color:#f1f1ef;border-color:rgba(255,255,255,.3);background:transparent}
+@media(max-width:520px){body.foundation-home .ecosystem-home{padding-top:24px;padding-bottom:24px}}
