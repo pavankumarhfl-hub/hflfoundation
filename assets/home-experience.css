@@ -1,0 +1,21 @@
+/* HFL Foundation homepage experience: action-led ecosystem, not a founder or PR article. */
+.foundation-experience{background:radial-gradient(ellipse at 92% 8%,rgba(199,166,106,.09),transparent 36%),#030303}
+.foundation-experience .ecosystem-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:44px}
+.foundation-experience .ecosystem-heading h2{font:700 clamp(42px,6vw,82px)/.92 Manrope;letter-spacing:-.075em;margin:22px 0 0}
+.foundation-experience .ecosystem-heading p{max-width:380px;color:var(--muted);font-size:13px}
+.foundation-ecosystem-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
+.foundation-eco-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:245px;padding:25px;border:1px solid var(--line);text-decoration:none;color:var(--white);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.008));overflow:hidden;transition:transform .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease)}
+.foundation-eco-card:hover{transform:translateY(-4px);border-color:rgba(199,166,106,.55);background:linear-gradient(145deg,rgba(199,166,106,.09),rgba(255,255,255,.015))}
+.foundation-eco-card:nth-child(1),.foundation-eco-card:nth-child(2){grid-column:span 6}
+.foundation-eco-card:nth-child(n+3){grid-column:span 4;min-height:210px}
+.foundation-eco-card:before{content:attr(data-mark);position:absolute;right:14px;top:5px;font:800 clamp(75px,12vw,145px)/1 Manrope;letter-spacing:-.12em;color:rgba(245,243,237,.035);pointer-events:none}
+.foundation-eco-card .eco-number{position:relative;z-index:1;font:700 9px 'DM Sans';letter-spacing:.2em;color:var(--gold)}
+.foundation-eco-card h3{position:relative;z-index:1;font:700 clamp(24px,3vw,39px)/1.05 Manrope;letter-spacing:-.055em;margin:42px 0 10px}
+.foundation-eco-card p{position:relative;z-index:1;color:var(--muted);font-size:12px;line-height:1.8;max-width:410px;margin:0}
+.foundation-eco-card .eco-open{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:14px;border-top:1px solid var(--line);font:700 10px 'DM Sans';letter-spacing:.06em}
+.foundation-eco-card .eco-open b{font-size:18px;color:var(--gold);font-weight:400}
+.foundation-action-band{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;margin-top:54px;padding:30px;border:1px solid rgba(199,166,106,.28);background:linear-gradient(105deg,rgba(199,166,106,.09),rgba(255,255,255,.015))}
+.foundation-action-band h3{font:700 clamp(25px,3.5vw,42px)/1 Manrope;letter-spacing:-.055em;margin:0 0 10px}
+.foundation-action-band p{color:var(--muted);font-size:13px;margin:0;max-width:550px}
+@media(max-width:760px){.foundation-experience .ecosystem-heading{display:block}.foundation-experience .ecosystem-heading p{margin-top:20px}.foundation-eco-card:nth-child(n){grid-column:span 12;min-height:190px;padding:22px}.foundation-eco-card h3{margin-top:34px}.foundation-action-band{grid-template-columns:1fr;padding:23px}}
+@media(prefers-reduced-motion:reduce){.foundation-eco-card{transition:none}}
