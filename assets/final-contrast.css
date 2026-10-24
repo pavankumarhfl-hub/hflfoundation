@@ -1,0 +1,65 @@
+/* FINAL CONTRAST + TYPOGRAPHY REPAIR — loaded last to defeat conflicting legacy styles. */
+:root{--foundation-paper:#f7f7f4;--foundation-paper-alt:#eff0ea;--foundation-ink:#20231f;--foundation-copy:#424940;--foundation-muted:#596057;--foundation-gold:#805a19;--foundation-rule:#d6d9d0}
+html,body,body.foundation-home{background:var(--foundation-paper)!important;color:var(--foundation-ink)!important;color-scheme:light!important;overflow-x:clip!important}
+body.foundation-home *{text-shadow:none!important;mix-blend-mode:normal!important}
+body.foundation-home h1,body.foundation-home h2,body.foundation-home h3,body.foundation-home h4,body.foundation-home h5,body.foundation-home h6,
+body.foundation-home .hero h1,body.foundation-home .section h2,body.foundation-home .closing h2,
+body.foundation-home .ecosystem-heading h2,body.foundation-home .foundation-action-band h3{
+ color:var(--foundation-ink)!important;-webkit-text-fill-color:var(--foundation-ink)!important;opacity:1!important;visibility:visible!important;
+ max-width:100%;white-space:normal!important;overflow-wrap:break-word!important;word-break:normal!important;hyphens:auto!important;text-wrap:pretty!important;
+}
+body.foundation-home .hero h1 i,body.foundation-home .section h2 em,body.foundation-home .section h2 i,
+body.foundation-home .closing h2 i,body.foundation-home .work-row h3 i,body.foundation-home .ecosystem-heading h2 i{
+ color:var(--foundation-gold)!important;-webkit-text-fill-color:var(--foundation-gold)!important;opacity:1!important
+}
+body.foundation-home p,body.foundation-home li,body.foundation-home small,body.foundation-home .hero-lede,
+body.foundation-home .section p,body.foundation-home .foundation-eco-card p,body.foundation-home .human-panel p,
+body.foundation-home .footer-tag,body.foundation-home .fineprint{
+ color:var(--foundation-copy)!important;-webkit-text-fill-color:var(--foundation-copy)!important;opacity:1!important;visibility:visible!important;line-height:1.75!important
+}
+body.foundation-home .eyebrow,body.foundation-home .section-label,body.foundation-home .hero-index,
+body.foundation-home .hero-meta,body.foundation-home .eco-number{color:#765319!important;-webkit-text-fill-color:#765319!important;opacity:1!important}
+body.foundation-home .hero,body.foundation-home .hero-flagship,body.foundation-home .section,
+body.foundation-home .intro-statement,body.foundation-home .numbers,body.foundation-home .section-dark-alt,
+body.foundation-home .work-section,body.foundation-home .foundation-experience{
+ background-color:var(--foundation-paper)!important;background-image:none!important;color:var(--foundation-ink)!important
+}
+body.foundation-home .numbers,body.foundation-home .section-dark-alt{background-color:var(--foundation-paper-alt)!important}
+body.foundation-home .hero:before,body.foundation-home .hero:after,body.foundation-home .section:before,
+body.foundation-home .section:after,body.foundation-home .intro-statement:before,body.foundation-home .intro-statement:after{
+ opacity:0!important;visibility:hidden!important;pointer-events:none!important
+}
+body.foundation-home .foundation-eco-card,body.foundation-home .card,body.foundation-home .impact-card,
+body.foundation-home .work-card,body.foundation-home .journal-card{
+ background:#fff!important;background-image:none!important;color:var(--foundation-ink)!important;border:1px solid var(--foundation-rule)!important;box-shadow:none!important
+}
+body.foundation-home .foundation-eco-card h3,body.foundation-home .card h3,body.foundation-home .impact-card h3,
+body.foundation-home .work-card h3,body.foundation-home .journal-card h3{color:var(--foundation-ink)!important;-webkit-text-fill-color:var(--foundation-ink)!important}
+body.foundation-home .site-header,body.foundation-home header.site-header{background:rgba(247,247,244,.98)!important;color:var(--foundation-ink)!important;border-color:var(--foundation-rule)!important}
+body.foundation-home .site-header a,body.foundation-home .site-header nav a,body.foundation-home .brand,
+body.foundation-home .brand-copy b,body.foundation-home .site-header .header-cta{opacity:1!important;visibility:visible!important}
+body.foundation-home .site-header nav a{color:var(--foundation-ink)!important;-webkit-text-fill-color:var(--foundation-ink)!important}
+body.foundation-home .header-cta,body.foundation-home .btn.primary{background:var(--foundation-ink)!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+body.foundation-home .btn.line{background:transparent!important;color:var(--foundation-ink)!important;-webkit-text-fill-color:var(--foundation-ink)!important;border-color:#aeb3a8!important}
+body.foundation-home footer,body.foundation-home .site-footer{background:#eceee8!important;color:var(--foundation-ink)!important}
+body.foundation-home footer a,body.foundation-home .site-footer a{color:var(--foundation-ink)!important;-webkit-text-fill-color:var(--foundation-ink)!important}
+body.foundation-home .reveal-up,body.foundation-home .reveal,body.foundation-home .reveal-line,body.foundation-home [data-scroll-reveal]{
+ opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important;clip-path:none!important
+}
+@media(max-width:760px){
+ body.foundation-home .site-header{height:auto;min-height:68px;display:flex;flex-wrap:wrap;gap:12px;padding:14px 18px!important}
+ body.foundation-home .site-header nav{order:4;width:100%;display:flex;overflow-x:auto;gap:18px;padding:10px 0;background:transparent!important}
+ body.foundation-home .hero,body.foundation-home .hero-flagship{min-height:0!important}
+ body.foundation-home .hero-index{position:relative;top:auto;left:auto;padding:24px 24px 0}
+ body.foundation-home .hero-main{padding:54px 24px 34px!important}
+ body.foundation-home .hero h1{font-size:clamp(3rem,13.5vw,5.2rem)!important;line-height:.98!important;letter-spacing:-.065em!important}
+ body.foundation-home .section{padding:64px 24px!important}
+ body.foundation-home .section h2,body.foundation-home .ecosystem-heading h2{font-size:clamp(2rem,8.5vw,3.4rem)!important;line-height:1.08!important;letter-spacing:-.035em!important}
+ body.foundation-home .two-col{grid-template-columns:minmax(0,1fr)!important;gap:20px!important}
+ body.foundation-home .metrics-wide{grid-template-columns:minmax(0,1fr)!important}
+ body.foundation-home .actions{gap:10px;flex-wrap:wrap}
+ body.foundation-home .actions .btn{min-height:44px;padding:12px 16px;white-space:normal;text-align:center}
+ body.foundation-home .foundation-eco-card{min-width:0;overflow-wrap:break-word}
+ body.foundation-home .foundation-eco-card h3{font-size:clamp(1.35rem,5vw,2rem)!important;line-height:1.15!important}
+}
+@media(prefers-reduced-motion:reduce){body.foundation-home *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
