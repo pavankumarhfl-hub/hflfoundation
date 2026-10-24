@@ -529,3 +529,64 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  .work-row{grid-template-columns:28px 1fr 20px;gap:12px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+
+/* FOUNDATION SITE-WIDE LAYOUT REPAIR — 2026-10-24
+   Shared, predictable typography, spacing, contrast and mobile layouts. */
+html{overflow-x:hidden;scroll-padding-top:96px}
+body{overflow-wrap:anywhere}
+img,svg,video,iframe{max-width:100%}
+h1,h2,h3,h4{overflow-wrap:normal;text-wrap:balance}
+p,li{overflow-wrap:break-word}
+.page-hero{width:100%;max-width:none;padding:clamp(72px,10vw,136px) max(6vw,22px) clamp(48px,7vw,90px);overflow:hidden}
+.page-hero h1{max-width:1100px;font-size:clamp(2.7rem,8vw,7.8rem);line-height:.98;letter-spacing:-.075em;overflow-wrap:normal}
+.page-hero>p:last-child{max-width:760px;font-size:clamp(1rem,1.45vw,1.15rem);line-height:1.8}
+.section{padding:clamp(56px,8vw,112px) max(6vw,22px);width:100%;max-width:none}
+.section>h2,.section h2{max-width:1000px;font-size:clamp(2rem,5.5vw,4.8rem);line-height:1.04;letter-spacing:-.06em;text-wrap:balance}
+.section>p{max-width:850px}
+.site-header{padding-inline:clamp(18px,5vw,72px);gap:20px}
+.site-header nav{min-width:0}
+.site-header nav a{white-space:nowrap}
+footer{padding:clamp(42px,6vw,72px) max(6vw,22px) 24px}
+.footer-main{align-items:flex-start}
+.footer-links{min-width:0}
+.footer-bottom{gap:18px;flex-wrap:wrap;line-height:1.5}
+.identity-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
+.identity-list>div{min-width:0;padding:24px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px}
+.identity-list>div>b{font:700 clamp(1.05rem,1.8vw,1.4rem)/1.2 Manrope,sans-serif;color:var(--white)}
+.identity-list>div>span{font-size:14px;line-height:1.7;color:var(--muted)}
+.identity-list>div>a{align-self:flex-start;margin-top:4px}
+.ecosystem-stage{min-height:640px;max-width:1320px;margin:28px auto 0;isolation:isolate}
+.eco-node{width:clamp(160px,17vw,220px);min-height:120px;padding:18px;overflow-wrap:anywhere}
+.eco-node b{font-size:clamp(1rem,1.7vw,1.35rem);line-height:1.15;letter-spacing:-.04em}
+.eco-node small{font-size:12px;line-height:1.55}
+.eco-center{width:clamp(130px,14vw,170px);height:clamp(130px,14vw,170px)}
+.eco-line{pointer-events:none}
+.identity-list a,.arrow-link{color:var(--gold);text-underline-offset:4px}
+.btn,.header-cta{max-width:100%;white-space:normal;text-align:center;line-height:1.35}
+@media(max-width:900px){
+ .site-header{height:auto;min-height:72px;flex-wrap:wrap;padding-block:16px}
+ .site-header nav{order:3;flex:1 0 100%;display:flex;gap:18px;overflow-x:auto;padding:8px 0 2px}
+ .ecosystem-stage{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-height:0;padding:22px;background:#080908}
+ .ecosystem-stage:before,.eco-line{display:none}
+ .eco-center{position:relative;inset:auto;transform:none;grid-column:1/-1;width:100%;height:auto;min-height:92px;border-radius:2px;margin-bottom:6px}
+ .eco-node,.eco-node.n1,.eco-node.n2,.eco-node.n3,.eco-node.n4,.eco-node.n5,.eco-node.n6{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;min-width:0;min-height:145px;display:block;transform:none}
+ .eco-node:hover{transform:translateY(-2px)}
+}
+@media(max-width:560px){
+ .page-hero{padding:68px 22px 44px}
+ .page-hero h1{font-size:clamp(2.55rem,12.5vw,4rem);line-height:1.02;letter-spacing:-.065em;margin-block:22px}
+ .section{padding:54px 22px}
+ .section>h2,.section h2{font-size:clamp(1.95rem,9vw,3rem);line-height:1.08;letter-spacing:-.05em}
+ .ecosystem-stage{grid-template-columns:minmax(0,1fr);padding:14px}
+ .eco-center{grid-column:auto}
+ .eco-node,.eco-node.n1,.eco-node.n2,.eco-node.n3,.eco-node.n4,.eco-node.n5,.eco-node.n6{min-height:0;padding:18px}
+ .identity-list{grid-template-columns:minmax(0,1fr)}
+ .identity-list>div{padding:20px 0}
+ .footer-main{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+ .footer-links{display:flex;flex-wrap:wrap;gap:14px 20px}
+ .footer-bottom{margin-top:36px;padding-top:16px;font-size:10px}
+ .actions{align-items:stretch}
+ .actions .btn{flex:0 1 auto;min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
